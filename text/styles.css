@@ -1,0 +1,16 @@
+body {
+    background: rgb(255, 255, 255);
+    overflow: hidden;
+    font-family: "Segoe UI", sans-serif;
+}
+
+p {
+    line-height: 14px;
+    background: url("https://avatars.githubusercontent.com/u/9919?s=200&v=4");
+    background-repeat: no-repeat;
+    background-size: 80vh;
+    background-position: center;
+
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: rgba(0, 0, 0, 0);
+  }
