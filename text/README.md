@@ -6,6 +6,7 @@ We have developed an application that shows how to print repeating text inside a
 
 So to get an image in CSS:
 - background url() function
+
 In order for the text to be displayed in the desired number in this picture, it is also possible to:
 - We have seen how the repeat() function is used.
 
