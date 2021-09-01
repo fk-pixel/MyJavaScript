@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>shopping cart</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,
+    user-scalable=no, initial-scale=1.0,
+    maximum-scale=1.0, minimum-scale=1.0">
+    <link rel='stylesheet' href='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css'>
+    <kink rel="stylesheet" href="./styles.css">
+</head>
+
+<body>
+    <div class="container-fluid mt-5">
+        <h2 class="mb-5 text-center">Shopping Cart</h2>
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div clas="table-responsive">
+                    <table class="table" id="myTable">
+                        <thead>
+                            <tr>
+                                <th>Product</th>
+                                <th>Name</th>
+                                <th>Quantity</th>
+                                <th>Price</th>
+                                <th class="text-right">
+                                    <span id="amount"
+                                    class="amount">
+                                    Amount</span>
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <div class="product-img">
+                                        <div class="img-prdct">
+                                            <img src="data:image/jpeg;base64,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"> 
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <p>Product One</p>
+                                </td>  
+                                <td>
+                                    <div class="button-container">
+                                        <button class="cart-qty-plus"
+                                        type="button"
+                                        value="+">
+                                        +</button>
+                                        <input type="text" name="qty" 
+                                        min="0" class="qty form-control" value="0" />
+                                        <button class="cart-qty-minus" type="button" 
+                                        value="-">
+                                        -</button>
+                                    </div>
+                                </td>
+                                <td>
+                                    <input type="text" 
+                                    value="72" class="price form-control"
+                                    disabled/>
+                                </td>
+                                <td align="right">$ 
+                                    <span id="amount" class="amount">
+                                    0</span>
+                                </td>  
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="product-img">
+                                        <div class="img-prdct">
+                                            <img src="https://assets.adidas.com/images/w_276,h_276,f_auto,q_auto:sensitive,fl_lossy,c_fill,g_auto/1762e017d70d4016960fad4f011f78a4_9366/Munchen_Shoes_Green_GX8659_01_standard.jpg"> 
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <p>Product Two</p>
+                                </td>  
+                                <td>
+                                    <div class="button-container">
+                                        <button class="cart-qty-plus"
+                                        type="button"
+                                        value="+">
+                                        +</button>
+                                        <input type="text" name="qty" 
+                                        min="0" class="qty form-control" value="0" />
+                                        <button class="cart-qty-minus" type="button" 
+                                        value="-">
+                                        -</button>
+                                    </div>
+                                </td>
+                                <td>
+                                    <input type="text" 
+                                    value="123" class="price form-control"
+                                    disabled/>
+                                </td>
+                                <td align="right">$ 
+                                    <span id="amount" class="amount">
+                                    0</span>
+                                </td>  
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="product-img">
+                                        <div class="img-prdct">
+                                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQhwQCe9Lzr5lDrkzKlniL-5OkVw0fwsdggYw&usqp=CAU"> 
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <p>Product Three</p>
+                                </td>  
+                                <td>
+                                    <div class="button-container">
+                                        <button class="cart-qty-plus"
+                                        type="button"
+                                        value="+">
+                                        +</button>
+                                        <input type="text" name="qty" 
+                                        min="0" class="qty form-control" value="0" />
+                                        <button class="cart-qty-minus" type="button" 
+                                        value="-">
+                                        -</button>
+                                    </div>
+                                </td>
+                                <td>
+                                    <input type="text" 
+                                    value="63" class="price form-control"
+                                    disabled/>
+                                </td>
+                                <td align="right">$ 
+                                    <span id="amount" class="amount">
+                                    0</span>
+                                </td>  
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="product-img">
+                                        <div class="img-prdct">
+                                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/FreshImpactLimited.JPG/150px-FreshImpactLimited.JPG"> 
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <p>Product Four</p>
+                                </td>  
+                                <td>
+                                    <div class="button-container">
+                                        <button class="cart-qty-plus"
+                                        type="button"
+                                        value="+">
+                                        +</button>
+                                        <input type="text" name="qty" 
+                                        min="0" class="qty form-control" value="0" />
+                                        <button class="cart-qty-minus" type="button" 
+                                        value="-">
+                                        -</button>
+                                    </div>
+                                </td>
+                                <td>
+                                    <input type="text" 
+                                    value="55" class="price form-control"
+                                    disabled/>
+                                </td>
+                                <td align="right">$ 
+                                    <span id="amount" class="amount">
+                                    0</span>
+                                </td>  
+                            </tr>
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                                <td colspan="4"></td>
+                                <td align="right">
+                                    <strong>TOTAL = $ 
+                                        <span id="total"
+                                        class="total">
+                                        0</span>
+                                    </strong>
+                                </td>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="./script.js"></script>
+</body>
+</html>
