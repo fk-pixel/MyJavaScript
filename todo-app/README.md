@@ -1,7 +1,7 @@
 # TODO &copy; APP
 In a simple to-do application, adding and deleting operations are represented by toast messages.
 
-![](/images/todojs.png)
+![](https://github.com/fk-pixel/MyJavaScript/blob/main/todo-app/images/todojs.png)
 
 ## For JSFrame ToastMessage using with script tag
 ```
