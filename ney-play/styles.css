@@ -1,0 +1,110 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Explora&display=swap');
+body {
+    text-align: center;
+    margin-left: 80px;
+    background-color:#0093f5 ;
+}
+
+h1 {
+    font-size: 7rem;
+    font-weight: 800;
+    height: 46px;
+    left: 13.11%;
+    right: 59.72%;
+    font-family:'Rubik';
+    font-style: normal;
+    line-height: 75px;
+    text-transform: uppercase;
+    margin-bottom: 10rem;
+    color: white;
+}
+
+h3 {
+    height: 22px;
+    left: 8.85%;
+    right: 79.25%;
+    top: calc(50% - 22px/2 - 156px);
+    margin-left: 5%;
+    margin-right: 0;
+    font-family: "Rubik";
+    font-style: normal;
+    font-weight: 300;
+    font-size: 33px;
+    line-height: 22px;
+    /* identical to box height */
+    text-align: center;
+    text-transform: uppercase;
+    color: #FFFFFF;
+}
+
+.details {
+    display:flex;
+    justify-content: center;
+  
+}
+.btn {
+    border-radius: 10px;
+    font-family: "Nunito Sans", sans-serif;
+    font-size: large;
+    margin-top: 1rem;
+    width: 150px;
+    height: 48px;
+    top: 174px;
+    margin-left: 5rem;
+    background-color: #E14545;
+    color: #FFFFFF;
+    cursor: pointer;
+}
+
+.pressed {
+    color: #ce3131;
+    background-color: #dfb84c;
+    box-shadow: 0 4px 5px 0 #dfb84c;
+}
+
+.ney-figma { 
+    width: 128px;
+    color: #F4C376;
+    background-color: #0093f5;
+    font-family: 'Explora', cursive;
+    font-weight: 800;
+    height: 128px;
+    margin: 4px;
+    position:-ms-page;
+    margin-bottom: 3rem;
+    font-size: 55px;
+    line-height: 25px;
+    left: 58px;
+    top: 239px;
+    border: 2px solid #F4C376;
+    box-sizing: border-box;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+footer {
+    font-family: "Nunito Sans", sans-serif;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 22px;
+    text-align: center;
+    text-transform: uppercase;
+    margin-top: 7rem;
+    color: white;
+}
+
+.set {
+    margin:10% auto;
+}
+
+
+
+@media (max-width: 768px) {
+    .div{
+    flex-direction: column;
+    }
+}
+
